@@ -5,19 +5,23 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mjafari <mjafari@student.42wolfsburg.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/04 18:41:41 by mjafari           #+#    #+#              #
-#    Updated: 2022/09/14 22:29:00 by mjafari          ###   ########.fr        #
+#    Created: 2022/09/14 16:10:14 by mjafari           #+#    #+#              #
+#    Updated: 2022/09/14 16:15:50 by mjafari          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Phonebook
+NAME = BraiiiiiiinnnzzzZ
 
-SRC = Contact.cpp main.cpp PhoneBook.cpp
+SRC = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+
+CC = clang++
+
+FLAGS = -Wall -Werror -Wextra -g -std=c++98
 
 all: $(NAME)
 
 $(NAME):
-	clang++ -g -Wall -Wextra -Werror -std=c++98 -o $(NAME) $(SRC)
+	$(CC) $(FLAGS) -o $(NAME) $(SRC)
 
 clean:
 	rm -f *.o
