@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjafari <mjafari@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/14 16:08:48 by mjafari           #+#    #+#             */
-/*   Updated: 2022/09/15 10:19:28 by mjafari          ###   ########.fr       */
+/*   Created: 2022/09/15 10:58:56 by mjafari           #+#    #+#             */
+/*   Updated: 2022/09/15 13:09:52 by mjafari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-int main(void)
+Weapon::Weapon(std::string type): _type(type)
 {
-	Zombie *z;
-	z = zombieHorde(10, "zombie");
-	delete[] z;
-	return (0);
+	std::cout << "weapon " << this->getType() << " is created!\n";
+}
+
+Weapon::~Weapon()
+{
+	std::cout << this->getType() << " is destroyed!\n";
+}
+
+void Weapon::setType(std::string type){
+	this->_type = type;
+}
+
+const std::string &Weapon::getType(void) const{
+	std::string const &ref = this->_type;
+	return(ref);
 }

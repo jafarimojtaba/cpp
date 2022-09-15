@@ -5,17 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjafari <mjafari@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/14 16:08:48 by mjafari           #+#    #+#             */
-/*   Updated: 2022/09/15 10:19:28 by mjafari          ###   ########.fr       */
+/*   Created: 2022/09/15 19:19:18 by mjafari           #+#    #+#             */
+/*   Updated: 2022/09/15 21:19:06 by mjafari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Harl.hpp"
 
 int main(void)
 {
-	Zombie *z;
-	z = zombieHorde(10, "zombie");
-	delete[] z;
-	return (0);
+	Harl h1;
+	h1.complain("DEBUG");
+	return(0);
 }
