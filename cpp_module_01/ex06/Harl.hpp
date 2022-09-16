@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjafari <mjafari@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 19:19:18 by mjafari           #+#    #+#             */
-/*   Updated: 2022/09/16 18:04:51 by mjafari          ###   ########.fr       */
+/*   Created: 2022/09/15 19:19:15 by mjafari           #+#    #+#             */
+/*   Updated: 2022/09/16 15:20:47 by mjafari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include <iostream>
+#include <string>
+#include <map>
 
-int main(void)
+class Harl
 {
-	Harl h1;
-	h1.complain("DEBUG");
-	h1.complain("ERROR");
-	h1.complain("WARNING");
-	h1.complain("INFO");
-	return(0);
-}
+private:
+	void debug(void);
+	void info(void);
+	void warning(void);
+	void error(void);
+public:
+	Harl(/* args */);
+	~Harl();
+	void    complain( std::string level );
+};
+typedef void (Harl::*FnPtr)(void);
+
+enum e_msg{
+	edebug = 1,
+	einfo = 2,
+	ewarning = 3,
+	eerror = 4,
+};
