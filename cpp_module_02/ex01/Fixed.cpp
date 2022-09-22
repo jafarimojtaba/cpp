@@ -6,7 +6,7 @@
 /*   By: mjafari <mjafari@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 16:18:23 by mjafari           #+#    #+#             */
-/*   Updated: 2022/09/21 17:41:52 by mjafari          ###   ########.fr       */
+/*   Updated: 2022/09/22 13:59:22 by mjafari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,20 @@ Fixed& Fixed::operator=(Fixed const &src)
 	return(*this);
 }
 
+Fixed::Fixed(int const n)
+{
+	std::cout << "Int constructor called\n";
+	this->number = n * (1 << this->fractional_bit);
+}
+
+Fixed::Fixed(float const n)
+{
+	std::cout << "Float constructor is called\n";
+	this->number = roundf(n * (1 << this->fractional_bit));
+}
+
 int Fixed::getRawBits(void) const{
-	std::cout << "getRawBits member function called\n";
+	// std::cout << "getRawBits member function called\n";
 	return (this->number);
 }
 
@@ -47,4 +59,16 @@ void Fixed::setRawBits(int const raw){
 
 Fixed::~Fixed(void){
 	std::cout << "Destructor called\n";
+}
+
+int Fixed::toInt(void) const{
+	return (this->getRawBits() / (1 << this->fractional_bit));
+}
+
+float Fixed::toFloat(void) const{
+	return (double)this->getRawBits() / (double) (1 << this->fractional_bit);
+}
+
+std::ostream& operator<<(std::ostream &stream, Fixed const &ref) {
+	return (stream << ref.toFloat());
 }
