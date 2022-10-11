@@ -16,29 +16,29 @@ const int Fixed::fractional_bit = 8;
 
 Fixed::Fixed(/* args */) : number(0)
 {
-	std::cout << "Default constructor called\n";
+	// std::cout << "Default constructor called\n";
 }
 
 Fixed::Fixed(Fixed const &src)
 {
-	std::cout << "Copy constructor called\n";
+	// std::cout << "Copy constructor called\n";
 	*this = src;
 }
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Destructor called\n";
+	// std::cout << "Destructor called\n";
 }
 
 Fixed::Fixed(int const n)
 {
-	std::cout << "Int constructor called\n";
+	// std::cout << "Int constructor called\n";
 	this->number = n * (1 << this->fractional_bit);
 }
 
 Fixed::Fixed(float const n)
 {
-	std::cout << "Float constructor is called\n";
+	// std::cout << "Float constructor is called\n";
 	this->number = roundf(n * (1 << this->fractional_bit));
 }
 
@@ -50,7 +50,7 @@ int Fixed::getRawBits(void) const
 
 void Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits member function called\n";
+	// std::cout << "setRawBits member function called\n";
 	this->number = raw;
 }
 
@@ -68,7 +68,7 @@ Fixed &Fixed::operator=(Fixed const &src)
 {
 	if (this != &src)
 	{
-		std::cout << "Copy assignment operator called\n";
+		// std::cout << "Copy assignment operator called\n";
 		this->number = src.getRawBits();
 	}
 	return (*this);

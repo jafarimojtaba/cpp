@@ -12,7 +12,7 @@
 
 NAME = OCF
 
-SRC = main.cpp Fixed.cpp
+SRC = main.cpp Fixed.cpp Point.cpp bsp.cpp
 
 FLAGS = clang++ -g -Wall -Wextra -Werror -std=c++98
 

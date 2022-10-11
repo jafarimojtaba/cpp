@@ -20,19 +20,15 @@ Point::Point(const float x, const float y): _x(x), _y(y)
 {
 }
 
-Point::Point(Point const &src){
-	*this = src;
-}
-
 Point &Point::operator=(Point const &src)
 {
-	if (this != &src)
-	{
-		this->_x = src.get_x();
-		this->_y = src.get_y();
-	}
+	src.~Point();
 	return (*this);
 }
+
+Point::Point(Point const &src): _x(src._x), _y(src._y){
+}
+
 Point::~Point()
 {
 }
@@ -44,6 +40,7 @@ float Point::get_x(void) const{
 float Point::get_y(void) const{
 	return (this->_y.toFloat());
 }
+
 std::ostream & operator<<(std::ostream &src, Point const & p)
 {
 	src << "(" << p.get_x() << "," << p.get_y() << ")";

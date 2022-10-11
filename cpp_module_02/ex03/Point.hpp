@@ -20,16 +20,19 @@ class Point
 private:
 	Fixed const _x;
 	Fixed const _y;
+
 public:
 	Point(/* args */);
-	Point(const float x, const float y);
 	Point(Point const &src);
-	Point& operator=(Fixed const &src);
+	Point &operator=(Point const &src);
+	Point(const float x, const float y);
 	~Point();
 	float get_x(void) const;
 	float get_y(void) const;
+	void set_x(Fixed x);
+	void set_y(Fixed y);
 };
 
 #endif // POINT_HPP
-std::ostream & operator<<(std::ostream &src, Point const &p);
-bool bsp( Point const a, Point const b, Point const c, Point const point);
+std::ostream &operator<<(std::ostream &src, Point const &p);
+bool bsp(Point const a, Point const b, Point const c, Point const p);
