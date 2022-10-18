@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                          :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjafari <mjafari@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,22 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal(/* args */)
+WrongAnimal::WrongAnimal(/* args */)
 {
-	std::cout << "Animal: Default constructor called\n";
+	std::cout << "WrongAnimal: Default constructor called\n";
 }
 
-Animal::Animal(Animal const &src)
+WrongAnimal::WrongAnimal(WrongAnimal const &src)
 {
-	std::cout << "Animal: Copy constructor called\n";
+	std::cout << "WrongAnimal: Copy constructor called\n";
 	*this = src;
 }
 
-Animal& Animal::operator=(Animal const &src)
+WrongAnimal& WrongAnimal::operator=(WrongAnimal const &src)
 {
-	std::cout << "Animal: Copy assignment operator called\n";
+	std::cout << "WrongAnimal: Copy assignment operator called\n";
 	if (this != &src)
 	{
 		this->_type = src.getType();
@@ -33,21 +33,21 @@ Animal& Animal::operator=(Animal const &src)
 	return(*this);
 }
 
-std::string Animal::getType(void) const{
-	// std::cout << "Animal: getType member function called\n";
+std::string WrongAnimal::getType(void) const{
+	// std::cout << "WrongAnimal: getType member function called\n";
 	return (this->_type);
 }
 
-void Animal::setType(std::string type){
-	// std::cout << "Animal:setType member function called\n";
+void WrongAnimal::setType(std::string type){
+	// std::cout << "WrongAnimal:setType member function called\n";
 	this->_type = type;
 }
 
-Animal::~Animal(void){
-	std::cout << "Animal: Destructor called\n";
+WrongAnimal::~WrongAnimal(void){
+	std::cout << "WrongAnimal: Destructor called\n";
 }
 
-void Animal::makeSound(void) const
+void WrongAnimal::makeSound(void) const
 {
-	std::cout << "Animal sounds: imagin it:)\n";
+	std::cout << "WrongAnimal sounds: imagin it:)\n";
 }

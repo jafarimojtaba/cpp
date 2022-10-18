@@ -46,8 +46,3 @@ void Animal::setType(std::string type){
 Animal::~Animal(void){
 	std::cout << "Animal: Destructor called\n";
 }
-
-void Animal::makeSound(void) const
-{
-	std::cout << "Animal sounds: imagin it:)\n";
-}

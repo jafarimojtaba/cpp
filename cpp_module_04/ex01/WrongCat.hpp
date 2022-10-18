@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongWrongCAT.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjafari <mjafari@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/21 16:18:29 by mjafari           #+#    #+#             */
-/*   Updated: 2022/10/18 19:12:19 by mjafari          ###   ########.fr       */
+/*   Created: 2022/10/18 12:43:35 by mjafari           #+#    #+#             */
+/*   Updated: 2022/10/18 18:52:39 by mjafari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined ANIMAL_HPP
-#define ANIMAL_HPP
-#include <iostream>
-#include <string>
 
-class Animal
+#if !defined WrongCAT_HPP
+#define WrongCAT_HPP
+
+#include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal
 {
-protected: 
+private: 
 	std::string _type;
 
 public:
-	Animal(/* args */);
-	Animal(Animal const &src);
-	Animal &operator=(Animal const &src);
-	virtual ~Animal();
-	virtual void makeSound(void) const;
-	virtual std::string getType(void) const;
-	virtual void setType(std::string type);
+	WrongCat(/* args */);
+	WrongCat(WrongCat const &src);
+	WrongCat &operator=(WrongCat const &src);
+	~WrongCat();
+	void makeSound(void) const;
+	std::string getType(void) const;
+	void setType(std::string type);
 };
 #endif

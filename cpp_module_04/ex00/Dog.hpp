@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjafari <mjafari@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/21 16:18:29 by mjafari           #+#    #+#             */
-/*   Updated: 2022/10/18 19:12:19 by mjafari          ###   ########.fr       */
+/*   Created: 2022/10/18 12:43:35 by mjafari           #+#    #+#             */
+/*   Updated: 2022/10/18 19:09:15 by mjafari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined ANIMAL_HPP
-#define ANIMAL_HPP
-#include <iostream>
-#include <string>
 
-class Animal
+#if !defined DOG_HPP
+#define DOG_HPP
+
+#include "Animal.hpp"
+
+class Dog : public Animal
 {
-protected: 
+private: 
 	std::string _type;
 
 public:
-	Animal(/* args */);
-	Animal(Animal const &src);
-	Animal &operator=(Animal const &src);
-	virtual ~Animal();
-	virtual void makeSound(void) const;
-	virtual std::string getType(void) const;
-	virtual void setType(std::string type);
+	Dog(/* args */);
+	Dog(Dog const &src);
+	Dog &operator=(Dog const &src);
+	~Dog();
+	void makeSound(void) const;
+	std::string getType(void) const;
+	void setType(std::string type);
 };
 #endif
