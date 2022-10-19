@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjafari <mjafari@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 12:43:35 by mjafari           #+#    #+#             */
-/*   Updated: 2022/10/19 11:32:11 by mjafari          ###   ########.fr       */
+/*   Created: 2022/10/19 20:04:06 by mjafari           #+#    #+#             */
+/*   Updated: 2022/10/19 20:12:22 by mjafari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP
 
-#if !defined DOG_HPP
-#define DOG_HPP
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-#include "AAnimal.hpp"
-#include "Brain.hpp"
-
-class Dog : public AAnimal
+class Character: public ICharacter
 {
-private: 
-	std::string _type;
-	Brain *_brain;
-
 public:
-	Dog(/* args */);
-	Dog(Dog const &src);
-	Dog &operator=(Dog const &src);
-	~Dog();
-	void makeSound(void) const;
-	std::string getType(void) const;
-	void setType(std::string type);
-	Brain* getBrain(void) const;
+	Character(/* args */);
+	Character(Character const &src);
+	Character &operator=(Character const &src);
+	~Character();
+	virtual std::string const &getName() const;
+	virtual void equip(AMateria *m);
+	virtual void unequip(int idx);
+	virtual void use(int idx, ICharacter &target);
+
 };
+
 #endif

@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cure.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjafari <mjafari@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 12:43:35 by mjafari           #+#    #+#             */
-/*   Updated: 2022/10/19 11:32:11 by mjafari          ###   ########.fr       */
+/*   Created: 2022/10/19 12:44:06 by mjafari           #+#    #+#             */
+/*   Updated: 2022/10/19 17:51:39 by mjafari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CURE_HPP
+#define CURE_HPP
 
-#if !defined DOG_HPP
-#define DOG_HPP
+#include "AMateria.hpp"
 
-#include "AAnimal.hpp"
-#include "Brain.hpp"
-
-class Dog : public AAnimal
+class Cure: public AMateria
 {
-private: 
-	std::string _type;
-	Brain *_brain;
-
 public:
-	Dog(/* args */);
-	Dog(Dog const &src);
-	Dog &operator=(Dog const &src);
-	~Dog();
-	void makeSound(void) const;
-	std::string getType(void) const;
-	void setType(std::string type);
-	Brain* getBrain(void) const;
+	Cure(/* args */);
+	Cure(Cure const &src);
+	Cure &operator=(Cure const &src);
+	~Cure();
+	virtual AMateria *clone() const;
 };
+
 #endif

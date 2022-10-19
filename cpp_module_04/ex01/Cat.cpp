@@ -6,7 +6,7 @@
 /*   By: mjafari <mjafari@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 12:42:56 by mjafari           #+#    #+#             */
-/*   Updated: 2022/10/18 20:58:15 by mjafari          ###   ########.fr       */
+/*   Updated: 2022/10/19 13:41:56 by mjafari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ Cat& Cat::operator=(Cat const &src)
 	if (this != &src)
 	{
 		this->_type = src.getType();
-		this->_brain = src.getBrain();
+		this->_brain = new Brain();
+		*(this->_brain) = *(src.getBrain());
 	}
 	return(*this);
 }
