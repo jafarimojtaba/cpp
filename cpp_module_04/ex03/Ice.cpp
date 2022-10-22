@@ -6,7 +6,7 @@
 /*   By: mjafari <mjafari@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 12:43:50 by mjafari           #+#    #+#             */
-/*   Updated: 2022/10/19 19:59:30 by mjafari          ###   ########.fr       */
+/*   Updated: 2022/10/20 20:48:38 by mjafari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Ice::Ice(/* args */): AMateria("ice")
 {
-	std::cout << "Ice: Default Constructor!\n";
+	// std::cout << "Materia ice created!\n";
 }
 
 Ice::Ice(Ice const &src)
@@ -43,7 +43,7 @@ AMateria* Ice::clone() const
 	return(ice);
 }
 
-void AMateria::use(ICharacter& target)
+void Ice::use(ICharacter& target)
 {
 	std::cout << "* shoots an ice bolt at " << target.getName() << " *\n";
 } 

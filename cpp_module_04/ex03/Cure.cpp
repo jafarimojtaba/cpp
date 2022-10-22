@@ -12,9 +12,9 @@
 
 #include "Cure.hpp"
 
-Cure::Cure(/* args */): AMateria("Cure")
+Cure::Cure(/* args */): AMateria("cure")
 {
-	std::cout << "Cure: Default Constructor!\n";
+	// std::cout << "Materia cure created!\n";
 }
 
 Cure::Cure(Cure const &src)
@@ -43,7 +43,7 @@ AMateria* Cure::clone() const
 	return(cure);
 }
 
-void AMateria::use(ICharacter& target)
+void Cure::use(ICharacter& target)
 {
 	std::cout << "* heals " << target.getName() << "'s wounds *\n";
 } 

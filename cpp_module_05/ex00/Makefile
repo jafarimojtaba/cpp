@@ -5,26 +5,33 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mjafari <mjafari@student.42wolfsburg.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/15 19:19:21 by mjafari           #+#    #+#              #
-#    Updated: 2022/10/20 20:56:40 by mjafari          ###   ########.fr        #
+#    Created: 2022/10/11 10:07:28 by mjafari           #+#    #+#              #
+#    Updated: 2022/10/22 15:19:55 by mjafari          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = materia
+NAME = bureaucrat
 
-SRC = AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp main.cpp
+CC = clang++
 
-FLAGS = clang++ -g -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
+
+SRC =   main.cpp \
+		Bureaucrat.cpp
+
+OBJ    =    $(SRC:%.cpp=%.o)
+
+RM = rm -f
 
 all: $(NAME)
 
-$(NAME):
-	$(FLAGS) -o $(NAME) $(SRC)
+$(NAME): $(OBJ)
+	$(CC) $(FLAGS) -o $(NAME) $(OBJ)
 
 clean:
-	rm -f *.o
+	$(RM) $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
-
+	$(RM) $(NAME)
+       
 re: fclean all

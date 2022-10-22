@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjafari <mjafari@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 12:44:06 by mjafari           #+#    #+#             */
-/*   Updated: 2022/10/20 20:12:54 by mjafari          ###   ########.fr       */
+/*   Created: 2022/10/21 19:49:42 by mjafari           #+#    #+#             */
+/*   Updated: 2022/10/22 18:17:14 by mjafari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-#define ICE_HPP
+#include "Bureaucrat.hpp"
 
-#include <iostream>
-#include "AMateria.hpp"
-
-class Ice: public AMateria
+int main(void)
 {
-public:
-	Ice(/* args */);
-	Ice(Ice const &src);
-	Ice &operator=(Ice const &src);
-	~Ice();
-	virtual AMateria *clone() const;
-	virtual void use(ICharacter& target);
-};
-
-#endif
+	splitor;
+	Bureaucrat b1("Mojtaba", 10);
+	splitor;
+	b1.decreaseGrade();
+	splitor;
+	Bureaucrat b2 = b1;
+	splitor;
+	// b2 = b1;
+	splitor;
+	std::cout << b1 << b2;
+	splitor;
+	return 0;
+}

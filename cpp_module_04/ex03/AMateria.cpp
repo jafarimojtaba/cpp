@@ -6,7 +6,7 @@
 /*   By: mjafari <mjafari@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 11:42:39 by mjafari           #+#    #+#             */
-/*   Updated: 2022/10/19 19:15:27 by mjafari          ###   ########.fr       */
+/*   Updated: 2022/10/20 20:31:29 by mjafari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ AMateria::AMateria()
 
 AMateria::AMateria(std::string const &type): _type(type)
 {
-	std::cout << "AMateria: Type cunstructor!\n";
+	// std::cout << "Materia " << type << " created\n";
 }
 
 AMateria::AMateria(AMateria const &src)
