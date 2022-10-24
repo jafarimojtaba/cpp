@@ -6,7 +6,7 @@
 /*   By: mjafari <mjafari@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 17:50:50 by mjafari           #+#    #+#             */
-/*   Updated: 2022/10/24 14:42:05 by mjafari          ###   ########.fr       */
+/*   Updated: 2022/10/24 14:41:43 by mjafari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ const char *Form::GradeTooLowException::what(void) const throw()
 const char *Form::GradeTooHighException::what(void) const throw()
 {
 	return ("Grade is Too high for the form");
+}
+
+const char *Form::NotSignedForm::what(void) const throw()
+{
+	return ("This form is not signed yet");
 }
 
 Form::Form(/* args */) : _name(""), _is_signed(false), _sign_grade_req(1), _exe_grade_req(1)
