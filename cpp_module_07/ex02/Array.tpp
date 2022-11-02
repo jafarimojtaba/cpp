@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjafari <mjafari@student.42wolfsburg.de>   +#+  +:+       +#+        */
+/*   By: mjafari <mjafari@students.42wolfsburg.de>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 16:57:44 by mjafari           #+#    #+#             */
-/*   Updated: 2022/11/01 19:48:44 by mjafari          ###   ########.fr       */
+/*   Updated: 2022/11/02 06:37:45 by mjafari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
+#include <string.h>
 
 
 template <typename T>
 int Array<T>::my_num = 0;
+
 template <typename T>
 Array<T>::Array() : _array(nullptr), _size(0)
 {
@@ -66,6 +68,8 @@ Array<T> &Array<T>::operator=(const Array &src)
 template<typename T>
 Array<T>::~Array()
 {
+	if (this->_array)
+		delete[] this->_array;
 	std::cout << "destructor is called\n";
 }
 

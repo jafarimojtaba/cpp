@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mjafari <mjafari@students.42wolfsburg.de>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/11 10:07:28 by mjafari           #+#    #+#              #
-#    Updated: 2022/11/02 06:37:00 by mjafari          ###   ########.fr        #
+#    Created: 2022/10/30 16:33:20 by mjafari           #+#    #+#              #
+#    Updated: 2022/10/30 16:54:29 by mjafari          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = t_array
+NAME = template
 
-CC = clang++
+CC = c++
 
-FLAGS = -g -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC =   main.cpp
+SRC = 	main.cpp
 
 OBJ    =    $(SRC:%.cpp=%.o)
 
@@ -35,4 +35,4 @@ fclean: clean
        
 re: fclean all
 
-.PHONY: fclean clean re
+.PHONY: clean fclean re

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjafari <mjafari@student.42wolfsburg.de>   +#+  +:+       +#+        */
+/*   By: mjafari <mjafari@students.42wolfsburg.de>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 15:11:04 by mjafari           #+#    #+#             */
-/*   Updated: 2022/11/01 19:50:18 by mjafari          ###   ########.fr       */
+/*   Updated: 2022/11/02 06:40:10 by mjafari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int main()
     // for (int i = 0; i < MAX_VAL; i++)
     // {
     //     numbers[i] = rand();
-    //     std::cout << numbers[i] << std::endl;
+    //     // std::cout << numbers[i] << std::endl;
     // }
     // delete [] mirror;//
     // return 0;
